@@ -1,23 +1,19 @@
 import * as React from "react";
 import UserInterface from '../models/UserInterface';
 
-export default class UserComponent extends React.Component<UserInterface, {}> {
-    constructor (props: UserInterface){
-        super(props);
-    }
+const UserComponent = (props: UserInterface) => {
+    return (  
+        <div>
+            <h1>User Component</h1>
+            Hello, <b>{props.name}</b>
+            <br/>
+            You are <b>{props.age} years old</b>
+            <br/>
+            You live at: <b>{props.address}</b>
+            <br/>
+            You were born: <b>{props.dob.toDateString()}</b>
+        </div>
+    );
+};
 
-    render() {
-        return (  
-            <div>
-                <h1>User Component</h1>
-                Hello, <b>{this.props.name}</b>
-                <br/>
-                You are <b>{this.props.age} years old</b>
-                <br/>
-                You live at: <b>{this.props.address}</b>
-                <br/>
-                You were born: <b>{this.props.dob.toDateString()}</b>
-            </div>
-        );
-    }
-}
+export default UserComponent;
